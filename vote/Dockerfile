@@ -14,7 +14,7 @@ ADD requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 RUN addgroup -g ${gid} ${group} \
-    && adduser -u ${uid} -G ${group} -s /bin/sh -D ${user}
+    && adduser -u ${uid} -G ${group} -s /bin/sh -D ${user} \
     && chown -R ${user}:${group} /app
     
 # Copy our code from the current folder to /app inside the container
